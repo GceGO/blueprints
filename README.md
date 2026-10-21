@@ -29,8 +29,8 @@ composer require gcego/blueprints
 | Requirement | Why |
 | --- | --- |
 | PHP 8.3+ | |
-| `gcego/core` | Framework integration. The service provider is a GCEGO package (`gcego/blueprints`, capability `blueprints`). |
-| `gcego/registry` | Discovery, registration and resolution of blueprint modules. |
+| `gcego/core` ^1.0 | Framework integration. The service provider is a GCEGO package (`gcego/blueprints`, capability `blueprints`). |
+| `gcego/registry` ^1.1 | Discovery, registration and resolution of blueprint modules. 1.1 is required: it loads class entrypoints once per process and attributes shared-folder files by kind. |
 | `illuminate/contracts`, `illuminate/support` ^13 | The Laravel service provider. |
 
 The package does **not** depend on `gcego/components`, `gcego/tables`,

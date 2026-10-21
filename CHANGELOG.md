@@ -3,7 +3,9 @@
 All notable changes to `gcego/blueprints` are documented in this file.
 The project follows [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [0.2.0] - 2026-10-21
+
+Requires `gcego/core` ^1.0 and `gcego/registry` ^1.1 (class entrypoints and shared-folder attribution), both from Packagist.
 
 ### Changed (breaking)
 
