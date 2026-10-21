@@ -3,14 +3,14 @@
 All notable changes to `gcego/blueprints` are documented in this file.
 The project follows [Semantic Versioning](https://semver.org/).
 
-## [0.2.0] - 2026-10-21
+## [1.0.0] - 2026-10-21
 
 Requires `gcego/core` ^1.0 and `gcego/registry` ^1.1 (class entrypoints and shared-folder attribution), both from Packagist.
 
 ### Changed (breaking)
 
 - `Blueprint` is now a standalone `final readonly` value object built with `Blueprint::define(BlueprintDefinition ...$definitions)`. It no longer extends `Gcego\Components\Component`.
-- Dependencies: `gcego/core`, `gcego/registry`, `illuminate/contracts` and `illuminate/support`. The `gcego/components` (`gcego/morfaw`) dependency is removed.
+- Dependencies: `gcego/core`, `gcego/registry`, `illuminate/contracts` and `illuminate/support`. The `gcego/components` (`gcego/components`) dependency is removed.
 - `BlueprintInterface` is the read-only definition API (`name()`, `title()`, `model()`, `table()`, `pages()`, `references()`, ...).
 - `BlueprintValidator` now validates class references through `ReferenceRule` adapters. `BlueprintValidationError` carries a definition `key` instead of a component path and role.
 
@@ -24,6 +24,7 @@ Requires `gcego/core` ^1.0 and `gcego/registry` ^1.1 (class entrypoints and shar
 - `BlueprintsServiceProvider` (a gcego/core package, capability `blueprints`) and `config/gcego-blueprints.php` (`kind`, `validate_references`).
 - `ReferenceRules`, `Rules\ClassExists`, `Rules\ImplementsContract`; opt-in derived definitions through `BlueprintDeriver`.
 - `InvalidDefinitionException`, `DefinitionRegistrationException`, `Naming::isClassName()` and `Naming::isDescription()`.
+- `Facades\Blueprints` (`has()`, `resolve()`, `names()`, `all()`), backed by `Resolution\RegistryBlueprintResolver`, which `BlueprintsServiceProvider` binds to the `BlueprintResolver` contract.
 
 ### Removed
 

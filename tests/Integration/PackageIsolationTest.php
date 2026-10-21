@@ -41,7 +41,7 @@ it('never references an optional feature engine in its code', function (string $
         PhpToken::tokenize((string) file_get_contents($file)),
     ));
 
-    expect($code)->not->toMatch('/Gcego\\\\(Components|Morfaw|Tables|Forms|Infolists|Actions|Pages|Widgets|Runtime|Modules)\\\\/');
+    expect($code)->not->toMatch('/Gcego\\\\(Components|Tables|Forms|Infolists|Actions|Pages|Widgets|Runtime|Modules)\\\\/');
 })->with(blueprintSourceFiles(...));
 
 it('registers references to feature packages that are not installed when references are unchecked', function (): void {
